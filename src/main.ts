@@ -4,11 +4,13 @@ import { router as categoriesRouter } from "./categories/categoriesController"
 import { router as expensesRouter } from "./expenses/expensesController"
 import { router as subscriptionRouter } from "./subscriptions/subscriptionsController"
 import { router as budgetRouter } from "./budget/budgetController"
+import cors from 'cors'
 
 async function main() {
     const app = express()
 
     app.use(express.json())
+    app.use(cors())
 
     app.use('/authorization', authorizationRouter)
     app.use('/categories', categoriesRouter)

@@ -1,0 +1,31 @@
+body {
+    background-image:url(https://www.clevergirlfinance.com/wp-content/uploads/2020/11/Monthly-expenses.jpg.webp);
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-size: cover;
+    background-color: #cccccc;
+    height: 500px;
+    position: relative;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.341);
+    margin-bottom: 60px;
+    padding: 10px;
+}
+
+.header h1 {
+    text-align: center;
+    color: rgb(238, 237, 237);
+}
+
+.inputs input {
+    display: flex;
+    margin: 20px auto; 
+    
+}
+
+.inputs {
+    margin: 20px auto;
+    text-align: center;
+}
