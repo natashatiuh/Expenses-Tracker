@@ -10,16 +10,47 @@
 <body>
     <div class="header">
         <h1>Expenses Tracker</h1>
+        <img id="logo" src="./images/logo.png" alt="logo">
     </div>
 
-    <div class="inputs col-md-4">
-        <input id="userName" type="text" placeholder="user name">
-        <input id="password" type="password" placeholder="password">
-        <button id="log-in-button">Log in</button>
+   <div class="auth-buttons">
+        <h2>Authorize with:</h2>
+        <div class="buttons">
+            <button id="sign-up">Sign Up</button>
+            <br>
+            <button id="sign-in">Sign In</button>
+        </div>
+   </div>
+
+   <div class="modal" id="signin-modal">
+    <div class="modal-content">
+        <span class="close-signin">&times;</span>
+        <h2>Sign In</h2>
+        <div class="signin-inputs" id="signin-close">
+            <input id="signin-username" type="text" placeholder="username">
+            <br>
+            <input id="signin-password" type="password" placeholder="password"> 
+        </div>
+        <button id="signin-button">Sign In</button>
     </div>
+   </div>
 
-
-
+   <div class="modal" id="signup-modal">
+    <div class="modal-content">
+        <span class="close-signup">&times;</span>
+        <h2>Sign Up</h2>
+        <div class="signup-inputs">
+            <input id="signup-username" type="text" placeholder="username">
+            <br>
+            <input id="signup-country" type="text" placeholder="country">
+            <br>
+            <input id="signup-password" type="password" placeholder="password">
+            <br>
+            <input id="signup-password2" type="password" placeholder="repeat password">
+        </div>
+        <button id="signup-button">Sign Up</button>
+    </div>
+   </div>
 
 
     <script src="index.js"></script>

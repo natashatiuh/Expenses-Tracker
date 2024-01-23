@@ -1,31 +1,208 @@
 body {
-    background-image:url(https://www.clevergirlfinance.com/wp-content/uploads/2020/11/Monthly-expenses.jpg.webp);
+    background-image:url('./images/background.jpeg');
     background-repeat: no-repeat;
     background-position: initial;
     background-size: cover;
-    background-color: #cccccc;
-    height: 500px;
+    height: 200px;
     position: relative;
 }
 
 .header {
     background-color: rgba(0, 0, 0, 0.341);
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     padding: 10px;
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+    margin-top: -80px;
+    margin-left: 20px;
 }
 
 .header h1 {
     text-align: center;
     color: rgb(238, 237, 237);
+    margin-top: 15px;
 }
 
-.inputs input {
-    display: flex;
-    margin: 20px auto; 
-    
-}
-
-.inputs {
-    margin: 20px auto;
+.auth-buttons {
     text-align: center;
+    background-color: rgb(237, 236, 236);
+    margin: 0 auto;
+    width: 30%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-radius: 25px;
 }
+
+.auth-buttons h2 {
+    color: rgba(7,64,159,255);
+    margin-bottom: 40px;
+}
+
+.buttons {
+    width: 100%;
+}
+
+
+#sign-up {
+    margin-bottom: 20px;
+    width: 150px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+#sign-up:hover {
+    background-color: rgba(7,64,159,255);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#sign-in {
+    width: 150px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+#sign-in:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 7%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -37px;
+    color: rgba(7,64,159,255);
+  }
+
+  .close-signin {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-signin:hover,
+  .close-signin:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .signin-inputs {
+    text-align: center;
+  }
+
+  #signin-username {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-color: black;
+  }
+
+  #signin-password {
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border-color: black;
+  }
+
+  #signin-button {
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  #signin-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    cursor: pointer;
+  }
+
+  .close-signup{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-signup:hover,
+  .close-signup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .signup-inputs {
+    text-align: center;
+  }
+
+  #signup-username {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-color: black;
+  }
+
+  #signup-country {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-color: black;
+  }
+
+  #signup-password {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-color: black;
+  }
+
+  #signup-password2 {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-color: black;
+  }
+
+  #signup-button {
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  #signup-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    cursor: pointer;
+  }
