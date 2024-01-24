@@ -13,26 +13,26 @@ import { UpdatePasswordInput } from './inputs/updatePasswordInput';
 
 export const router = express.Router()
 
-router.post('/', validation(signUpSchema), async (req, res) => {
+router.post('/sign-up', validation(signUpSchema), async (req, res) => {
     try{
         const { userName, password, country } = req.body as any
         const userData = new SignUpUserInput(userName, password, country)
         const token = await authorizationService.signUp(userData)
-        res.send(`Token is ${token}`)
+        res.json({token})
     } catch(error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
-router.get('/', validation(signInSchema), async (req, res) => {
+router.post('/sign-in', validation(signInSchema), async (req, res) => {
     try{
         const { userName, password } = req.body as any
         const token = await authorizationService.signIn(userName, password)
-        res.send(`Token is ${token}`)
+        res.json({token})
     } catch(error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
