@@ -55,7 +55,6 @@ async function getUserInfo() {
 let newNameInput = document.getElementById("new-name-input")
 const newNameButton = document.getElementById("new-name-button")
 
-const usernameInfo = document.getElementById("username")
 
 let newCountryInput = document.getElementById("new-country-input")
 const newCountryButton = document.getElementById("new-country-button")
@@ -82,8 +81,15 @@ newNameButton.addEventListener("click", async () => {
         
         const data = await response.json()
         console.log(data)
-        alert("Username was updated!")
-        newNameInput.value = ""
+        if (data.success == true) {
+            alert("Username was updated!")
+            const usernameInfo = document.getElementById("username")
+            usernameInfo.innerHTML = `<b>Username:</b> ${newNameInput.value}`;  
+            newNameInput.value = ""
+        } else {
+            alert("The user with such name is already exists. Choose another username.")
+        }
+        
     } catch (error) {
         console.log(error)
         alert('Error editing Username. Please try again.')
