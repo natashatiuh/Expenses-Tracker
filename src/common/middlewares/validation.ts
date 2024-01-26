@@ -5,7 +5,7 @@ export const validation = (schema: any) => {
             next()
         } catch(error) {
             console.log(error)
-            res.send('Invalid data sent!')
+            res.json({success: false})
         }
 }
 }

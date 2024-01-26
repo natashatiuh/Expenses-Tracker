@@ -18,10 +18,10 @@ window.addEventListener("click", (event) => {
     }
 })
 
-const userNameInputSignUp = document.getElementById("signup-username")
-const countryInputSignUp = document.getElementById("signup-country")
-const passwordInputdSignUp1 = document.getElementById("signup-password")
-const passwordInputdSignUp2 = document.getElementById("signup-password2")
+let userNameInputSignUp = document.getElementById("signup-username")
+let countryInputSignUp = document.getElementById("signup-country")
+let passwordInputdSignUp1 = document.getElementById("signup-password")
+let passwordInputdSignUp2 = document.getElementById("signup-password2")
 
 const signUpModalButton = document.getElementById("signup-button")
 
@@ -50,6 +50,11 @@ signUpModalButton.addEventListener("click", async () => {
             console.log(data)
             alert("User was authorized!")
             signUpModal.style.display = "none"
+            userNameInputSignUp.value = ""
+            countryInputSignUp.value = ""
+            passwordInputdSignUp1.value = ""
+            passwordInputdSignUp2.value = ""
+            window.location.replace("file:///Users/nataliatuh/Documents/natasha-projects/expenses_tracker/client/home.html");
         } else {
             alert("Check your password!")
         }
@@ -79,8 +84,8 @@ window.addEventListener("click", (event) => {
     }
 })
 
-const userNameInputSignIn = document.getElementById("signin-username")
-const passwordInputSignIn = document.getElementById("signin-password")
+let userNameInputSignIn = document.getElementById("signin-username")
+let passwordInputSignIn = document.getElementById("signin-password")
 
 const signInButtonModal = document.getElementById("signin-button")
 
@@ -102,11 +107,20 @@ signInButtonModal.addEventListener("click", async () => {
                 })
             })
 
+
             const data = await response.json()
             window.localStorage.setItem('token', data.token);
-            console.log(data)
-            alert('User was authorized!')
-            signInModal.style.display = "none"
+            if (data.token) {
+                alert('User was authorized!')
+                signInModal.style.display = "none"
+                userNameInputSignIn.value = ""
+                passwordInputSignIn.value = ""
+                window.location.replace("file:///Users/nataliatuh/Documents/natasha-projects/expenses_tracker/client/home.html"); 
+            } else {
+                alert("Username or password is incorrect. Try again!")
+            }
+            
+            
      } catch (error) {
         console.log(error)
         alert("ERROR! User wasn't authorized!")

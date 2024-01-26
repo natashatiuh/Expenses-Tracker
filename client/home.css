@@ -1,0 +1,159 @@
+.content {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 230px;
+    font-size: 27px;
+}
+
+.my-profile button {
+    padding: 30px 100px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(176, 175, 175, 0.2), 0 6px 20px 0 rgba(218, 214, 214, 0.19);
+}
+
+.my-profile button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    cursor: pointer;
+    border-color: rgba(7,64,159,255);
+}
+
+.my-categories button {
+    padding: 30px 100px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(176, 175, 175, 0.2), 0 6px 20px 0 rgba(218, 214, 214, 0.19);
+}
+
+.my-categories button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    cursor: pointer;
+    border-color: rgba(7,64,159,255);
+}
+
+.my-expenses button {
+    padding: 30px 100px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(176, 175, 175, 0.2), 0 6px 20px 0 rgba(218, 214, 214, 0.19);
+}
+
+.my-expenses button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    cursor: pointer;
+    border-color: rgba(7,64,159,255);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    margin-top: -150px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -37px;
+    color: rgba(7,64,159,255);
+  }
+
+  .close-profile {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-profile:hover,
+  .close-profile:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #user-info {
+    text-align: center;
+    font-size: large;
+  }
+
+  .edit-info h4 {
+    text-align: center;
+    color: rgba(7,64,159,255);
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .edit-info-inputs {
+    text-align: center;
+  }
+
+  #new-name input {
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  #new-name button {
+    border-radius: 8px;
+  }
+
+  #new-name button:hover {
+   color: white;
+   background-color: rgba(7,64,159,255);
+   cursor: pointer;
+  }
+
+  #new-country input {
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  #new-country button {
+    border-radius: 8px;
+  }
+
+  #new-country button:hover {
+   color: white;
+   background-color: rgba(7,64,159,255);
+   cursor: pointer;
+  }
+
+  #new-password input {
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  #new-password button {
+    border-radius: 8px;
+  }
+
+  #new-password button:hover {
+   color: white;
+   background-color: rgba(7,64,159,255);
+   cursor: pointer;
+  }
+
+
+
+

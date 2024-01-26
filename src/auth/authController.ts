@@ -40,15 +40,16 @@ router.patch('/name', auth(), validation(changeNameSchema), async (req: any, res
     try{
         console.log(req.userId)
         const { newName }= req.body as any
+        console.log(newName)
         const isNameChanged = await authorizationService.changeName(newName, (req as MyRequest).userId)
         if (!isNameChanged){
-            res.send('Something goes wrong!')
+            res.json({success: false})
         } else {
-           res.send('The name was successfully changed!') 
+           res.json({success: true}) 
         }
     } catch(error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -100,9 +101,9 @@ router.delete('/', auth(), async (req, res) => {
 router.get('/user', auth(), async (req, res) => {
     try {
         const user = await authorizationService.getUser((req as MyRequest).userId)
-        res.send(user)
+        res.json({user})
     } catch (error){
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
