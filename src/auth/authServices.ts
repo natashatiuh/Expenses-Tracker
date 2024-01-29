@@ -57,6 +57,11 @@ class AuthorizationService {
         return user
     }
 
+    async getCurrency(userId: string) {
+        const currency = await authorizationRepository.getCurrency(userId)
+        return currency
+    }
+
 }
 
 export const authorizationService = new AuthorizationService()

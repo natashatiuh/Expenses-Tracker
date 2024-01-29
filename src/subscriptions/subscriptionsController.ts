@@ -10,13 +10,13 @@ router.patch('/add-subscription', auth(), async (req, res) => {
     try {
         const wasSubscriptionAdded = await subscriptionService.addSubscription((req as MyRequest).userId)
         if (!wasSubscriptionAdded) {
-            res.send("Your subscription was NOT activated!")
+            res.json({success: false})
         } else {
-            res.send("Your subscription was activated successfully!")
+            res.json({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -24,12 +24,12 @@ router.patch('/stop-subscription', auth(), async (req, res) => {
     try {
         const wasSubscriptionStopped = await subscriptionService.stopSubscription((req as MyRequest).userId)
         if (!wasSubscriptionStopped) {
-            res.send("Your subscription was NOT stopped!")
+            res.json({success: false})
         } else {
-            res.send("Your subscription was stopped successfully!")
+            res.json({success: true})
         }
     } catch(error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })

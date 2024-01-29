@@ -58,13 +58,13 @@ router.patch('/country', auth(), validation(changeCountrySchema), async (req, re
         const { newCountry } = req.body as any
         const isCountryChanged = await authorizationService.changeCountry(newCountry, (req as MyRequest).userId)
         if (!isCountryChanged) {
-            res.send('Something goes wrong!')
+            res.json({success: true})
         } else {
-            res.send('The country was successfully changed!')
+            res.json({success: false})
         }
     } catch(error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -74,13 +74,13 @@ router.patch('/password', auth(), validation(changePasswordSchema), async (req, 
         const passwordData = new UpdatePasswordInput(newPassword, oldPassword, (req as MyRequest).userId)
         const isPasswordChanged = await authorizationService.changePassword(passwordData)
         if(!isPasswordChanged) {
-            res.send('Something goes wrong!') 
+            res.json({success: false}) 
         } else {
-            res.send('The password was successfully changed!')
+            res.json({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -103,6 +103,16 @@ router.get('/user', auth(), async (req, res) => {
         const user = await authorizationService.getUser((req as MyRequest).userId)
         res.json({user})
     } catch (error){
+        console.log(error)
+        res.json({success: false})
+    }
+})
+
+router.get('/currency', auth(), async (req, res) => {
+    try {
+        const currency = await authorizationService.getCurrency((req as MyRequest).userId)
+        res.json({currency})
+    } catch (error) {
         console.log(error)
         res.json({success: false})
     }

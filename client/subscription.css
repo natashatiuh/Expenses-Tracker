@@ -1,0 +1,65 @@
+.subscription-info h2 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: -30px;
+    color: rgb(93, 93, 239);
+    text-shadow: 50px;
+}
+
+.info {
+    width: 50%; 
+    margin: auto; 
+    padding: 40px; 
+    padding-left: 150px;
+    color: white;
+}
+
+.button-subscription {
+    text-align: center;
+}
+
+#add-subscription {
+    padding: 30px 60px;
+    font-size: x-large;
+    border-radius: 30px;
+}
+
+#add-subscription:hover {
+    color: white;
+    background-color: rgb(80, 80, 244);
+    border-color: rgb(80, 80, 244);
+    cursor: pointer;
+}
+
+#expiration {
+    text-align: center;
+    color: rgb(164, 164, 239);
+    margin-bottom: 40px;
+}
+
+#cancel-subscription {
+    padding: 30px 60px;
+    font-size: x-large;
+    border-radius: 30px;
+}
+
+#cancel-subscription:hover {
+    color: white;
+    background-color: rgb(80, 80, 244);
+    border-color: rgb(80, 80, 244);
+    cursor: pointer;
+}
+
+#return-homepage {
+    position: absolute;
+    top: 290%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#return-homepage2 {
+    position: absolute;
+    top: 330%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

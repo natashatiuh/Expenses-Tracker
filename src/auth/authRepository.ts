@@ -170,6 +170,19 @@ class AuthorizationRepository {
 
         connection.release()
     }
+
+    async getCurrency(userId: string) {
+        const connection = await pool.getConnection()
+
+        const query = `
+        SELECT currency FROM users
+        WHERE id = ?
+        `
+        const params = [userId]
+
+        const [currency]: any = await connection.query(query, params)
+        return currency
+    }
 }
 
 export const authorizationRepository = new AuthorizationRepository()

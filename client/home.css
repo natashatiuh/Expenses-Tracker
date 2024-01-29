@@ -102,38 +102,38 @@
     text-align: center;
     color: rgba(7,64,159,255);
     margin-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 5px;
   }
 
   .edit-info-inputs {
     text-align: center;
   }
 
-  #new-name input {
+  #new-name-input {
     border-radius: 8px;
     text-align: center;
   }
 
-  #new-name button {
+  #new-name-button {
     border-radius: 8px;
   }
 
-  #new-name button:hover {
+  #new-name-button:hover {
    color: white;
    background-color: rgba(7,64,159,255);
    cursor: pointer;
   }
 
-  #new-country input {
+  #new-country-input {
     border-radius: 8px;
     text-align: center;
   }
 
-  #new-country button {
+  #new-country-button {
     border-radius: 8px;
   }
 
-  #new-country button:hover {
+  #new-country-button:hover {
    color: white;
    background-color: rgba(7,64,159,255);
    cursor: pointer;
@@ -144,11 +144,11 @@
     text-align: center;
   }
 
-  #new-password button {
+  #change-password-button {
     border-radius: 8px;
   }
 
-  #new-password button:hover {
+  #change-password-button:hover {
    color: white;
    background-color: rgba(7,64,159,255);
    cursor: pointer;
