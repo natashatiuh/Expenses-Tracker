@@ -138,9 +138,10 @@ class CategoriesRepository {
         const connection = await pool.getConnection()
         try {
             const query = `
-                SELECT id, name, userWhoCreated, isFavorite, date 
+                SELECT id, name, userWhoCreated, isFavorite, date, monthBudget, currency
                 FROM categories 
                 WHERE userWhoCreated = ?
+                ORDER BY date DESC
                 `
             const params = [userId]
 

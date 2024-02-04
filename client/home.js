@@ -184,9 +184,15 @@ changePasswordButton.addEventListener("click", async () => {
     }
 })
 
+const myCategoriesButton = document.getElementById("categories-button")
 
+myCategoriesButton.addEventListener("click", () => {
+    window.location.replace("file:///Users/nataliatuh/Documents/natasha-projects/expenses_tracker/client/categories.html")
+})
 
+const signOutButton = document.getElementById("sign-out")
 
-
-
+signOutButton.addEventListener("click", () => {
+    window.location.replace("file:///Users/nataliatuh/Documents/natasha-projects/expenses_tracker/client/index.html")
+})
 

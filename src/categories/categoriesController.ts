@@ -20,13 +20,13 @@ router.post('/', auth(), validation(addCategorySchema), async (req, res) => {
         const categoryData = new AddCategoryInput(name, (req as MyRequest).userId, monthBudget)
         const category = await categoriesService.addCategory(categoryData)
         if (!category) {
-            res.send("You've already added 5 categories. If you want to add more you need a subscription!")
+            res.json({success: false})
         } else {
-            res.send("The category was addded successfully!")
+            res.json({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -36,13 +36,13 @@ router.patch('/name', auth(), validation(editCategorySchema), async (req, res) =
         const editedcategoryData = new EditCategoryInput(newName, categoryId, (req as MyRequest).userId)
         const editedCategory = await categoriesService.editCategory(editedcategoryData)
         if(!editedCategory) {
-            res.send('Something goes wrong!')
+            res.json({success: false})
         } else {
-            res.send(editedCategory)
+            res.json({editedCategory})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -51,13 +51,13 @@ router.delete('/', auth(), validation(deleteCategorySchema), async (req, res) =>
         const { categoryId } = req.body as any
         const isDeletedCategory = await categoriesService.deleteCategory(categoryId, (req as MyRequest).userId)
         if(!isDeletedCategory) {
-            res.send('Something goes wrong!')
+            res.json({success: false})
         } else {
-            res.send('The category was deleted!')
+            res.json({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -95,12 +95,12 @@ router.get('/', auth(), async (req, res) => {
     try {
         const userCategories = await categoriesService.getUserCategory((req as MyRequest).userId)
         if(userCategories === false) {
-            res.send("You do NOT have any categories!")
+            res.json({success: false})
         } else {
-            res.send(userCategories)
+            res.json({userCategories})
         }
     } catch (error) {
         console.log(error) 
-        res.send(error)
+        res.json({success: false})
     }
 })

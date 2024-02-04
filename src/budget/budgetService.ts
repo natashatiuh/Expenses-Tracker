@@ -1,8 +1,11 @@
+import { authorizationRepository } from "../auth/authRepository";
+import { authorizationService } from "../auth/authServices";
 import { budgetRepository } from "./budgetRepository";
 
 class BudgetService {
     async addBudget(budget: number, categoryId: string, userId: string) {
         const currency = await budgetRepository.getUserCurrency(userId)
+        console.log(currency)
         const wasBudgetAdded = await budgetRepository.addBudget(budget, categoryId, userId, currency)
         return wasBudgetAdded
     }

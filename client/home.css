@@ -12,6 +12,9 @@
     padding: 30px 100px;
     border-radius: 20px;
     box-shadow: 0 8px 16px 0 rgba(176, 175, 175, 0.2), 0 6px 20px 0 rgba(218, 214, 214, 0.19);
+    color: rgba(7,64,159,255);
+    border-color: rgba(7,64,159,255);
+    border-width: 5px;
 }
 
 .my-profile button:hover {
@@ -25,6 +28,9 @@
     padding: 30px 100px;
     border-radius: 20px;
     box-shadow: 0 8px 16px 0 rgba(176, 175, 175, 0.2), 0 6px 20px 0 rgba(218, 214, 214, 0.19);
+    color: rgba(7,64,159,255);
+    border-color: rgba(7,64,159,255);
+    border-width: 5px;
 }
 
 .my-categories button:hover {
@@ -38,6 +44,9 @@
     padding: 30px 100px;
     border-radius: 20px;
     box-shadow: 0 8px 16px 0 rgba(176, 175, 175, 0.2), 0 6px 20px 0 rgba(218, 214, 214, 0.19);
+    color: rgba(7,64,159,255);
+    border-color: rgba(7,64,159,255);
+    border-width: 5px;
 }
 
 .my-expenses button:hover {
@@ -154,6 +163,27 @@
    cursor: pointer;
   }
 
+.sign-out {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#sign-out {
+    padding: 8px 22px;
+    border-radius: 8px;
+    background-color:  rgba(7,64,159,255);
+    border-color: rgba(7,64,159,255);
+    color: white;
+}
+
+#sign-out:hover {
+    color: black;
+    background-color: white;
+}
+
+  
+
+  
 
 
 

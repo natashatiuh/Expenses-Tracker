@@ -1,0 +1,280 @@
+.categories-info h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+}
+
+ table, th, td {
+    border:1px solid black;
+    color: black;
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table tr td {
+    padding: 5px;
+}
+
+.category-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#add-category-button {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 17px;
+    border-color: rgba(7,64,159,255);
+}
+
+#add-category-button:hover {
+    background-color: white;
+    border-color: rgba(7,64,159,255);
+    padding: 10px 15px;
+    border-width: 4px;
+    color: black;
+}
+
+.add-budget-button {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.add-budget-button:hover {
+    background-color: white;
+    border-color: rgba(7,64,159,255);
+    color: black;
+    padding: 10px 15px;
+}
+
+.category-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 1000%; /* Full height */
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    margin-top: -150px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -37px;
+    color: rgba(7,64,159,255);
+  }
+
+  .close-category {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-category:hover,
+  .close-category:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .add-category-info {
+    text-align: center;
+  }
+
+ #add-category-input {
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 8px;
+ }
+
+ #add-category-modal-button {
+    border-radius: 8px;
+ }
+
+ #add-category-modal-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+ }
+
+ .edit-button {
+    border-color: rgba(7,64,159,255);
+    padding: 4px 18px;
+ }
+
+ .edit-button:hover {
+    padding: 2px 16px;
+    border-width: 4px;
+ }
+
+ .delete-button {
+    border-color: rgba(7,64,159,255);
+    padding: 4px 18px;
+ }
+
+ .delete-button:hover {
+    padding: 2px 16px;
+    border-width: 4px;
+ }
+
+ .close-budget {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-budget:hover,
+  .close-budget:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .add-budget-info {
+    text-align: center;
+    margin-top: -10px;
+  }
+
+  #add-budget-input {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  #add-currency-input {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  #add-budget-modal-button {
+    border-radius: 8px;
+  }
+
+  #add-budget-modal-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+ }
+
+ .edit-category-info {
+    text-align: center;
+ }
+
+ .close-edit {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-edit:hover,
+  .close-edit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #edit-name {
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  #edit-budget {
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  #edit-currency {
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  #edit-name-button {
+    border-radius: 8px;
+  }
+
+  #edit-name-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    border-color: rgba(7,64,159,255);
+  }
+
+  #edit-budget-button {
+    border-radius: 8px;
+  }
+
+  #edit-budget-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    border-color: rgba(7,64,159,255);
+  }
+  
+  #edit-currency-button {
+    border-radius: 8px;
+  }
+
+  #edit-currency-button:hover {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    border-color: rgba(7,64,159,255);
+  }
+
+  .budget-sum {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+  }
+  
+  #return-homepage {
+    position: relative;
+    left: 45%;
+    right: 40%;
+}
+
+.add-subscription {
+    border-color: rgba(7,64,159,255);
+    padding: 4px 18px;
+ }
+
+ .add-subscription:hover {
+    padding: 2px 16px;
+    border-width: 4px;
+ }
+
+
+
+  

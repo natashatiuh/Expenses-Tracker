@@ -14,13 +14,13 @@ router.patch('/add-budget', auth(), validation(addBudgetSchema), async (req, res
         const { budget, categoryId } = req.body as any
         const wasBudgetAdded = await budgetService.addBudget(budget, categoryId, (req as MyRequest).userId)
         if (!wasBudgetAdded) {
-            res.send("Budget was NOT added!")
+            res.json({success: false})
         } else {
-            res.send("Budget was added!")
+            res.json({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -56,10 +56,10 @@ router.get('/', auth(), async (req, res) => {
 router.get('/sum', auth(), async (req, res) => {
     try {
         const monthBudgetSum = await budgetService.sumMonthBudget((req as MyRequest).userId)
-        res.send(monthBudgetSum)
+        res.json(monthBudgetSum)
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -68,12 +68,12 @@ router.patch('/update-currency', auth(), validation(updateBudgetCurrencySchema),
         const { currency, categoryId } = req.body as any
         const updatedCurrency = await budgetService.updateBudgetCurrency(currency, categoryId, (req as MyRequest).userId)
         if (!updatedCurrency) {
-            res.send("The currency was NOT changed!")
+            res.json({success: false})
         } else {
-            res.send("The currency was changed!")
+            res.json({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })

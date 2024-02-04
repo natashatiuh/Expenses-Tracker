@@ -51,15 +51,13 @@
 }
 
 #return-homepage {
-    position: absolute;
-    top: 290%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: 45%;
+    right: 40%;
 }
 
 #return-homepage2 {
-    position: absolute;
-    top: 330%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: 45%;
+    right: 40%;
 }
