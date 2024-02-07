@@ -90,10 +90,6 @@ async function getAllCategories() {
 
     const closeAddBudget = document.getElementById("close-budget") 
 
-    const addBudgetInput = document.getElementById("add-budget-input")
-
-    const addBudget = document.getElementById("add-budget-modal-button")
-
     addBudgetButtons.forEach((addBudgetButton) => {
         const categoryId = addBudgetButton.dataset.categoryId
         addBudgetButton.addEventListener("click", () => {
@@ -112,36 +108,6 @@ async function getAllCategories() {
         }
     })
 
-    addBudget.addEventListener("click", async () => {
-        try {
-            const response = await fetch("http://localhost:3001/budget/add-budget", {
-                method: "PATCH",
-                headers: {
-                    "Authorization": token,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    budget: addBudgetInput.value,
-                    categoryId: addBudgetModal.dataset.categoryId
-                }),
-            })
-            const budgetData = await response.json()
-            console.log(budgetData)
-            getAllCategories()
-            addBudgetInput.value = ""
-            addBudgetModal.style.display = "none"
-            if (userData.user.subscriptionExpiresAt != null) {
-                alert("Budget was added!")
-            } else {
-                alert("You can't add month budget without subscription!")
-            }
-            
-        } catch (error) {
-            console.log(error) 
-            alert("ERROR! Budget wasn't added!")
-        }
-    })
-
     const addSubscriptionButtons = document.querySelectorAll('.add-subscription')
 
     addSubscriptionButtons.forEach((subscriptionButton) => {
@@ -150,90 +116,30 @@ async function getAllCategories() {
         })
     })
 
-    const editButton = document.querySelectorAll('.edit-button')
-    
-    const editCategoryModal = document.getElementById("edit-category-modal")
+const editButtons = document.querySelectorAll('.edit-button')
 
-    const closeEdit = document.getElementById("close-edit")
+const editCategoryModal = document.getElementById("edit-category-modal")
 
-    const editNameInput = document.getElementById("edit-name")
+const closeEdit = document.getElementById("close-edit")
 
-    const editBudgetInput = document.getElementById("edit-budget")
-
-    const editNameButton = document.getElementById("edit-name-button")
-
-    const editBudgetButton = document.getElementById("edit-budget-button")
-
-    editButton.forEach((editButton, index) => {
-        const categoryId = editButton.dataset.categoryId
-        editButton.addEventListener("click", () => {
-            editCategoryModal.style.display = "block"
-            editCategoryModal.dataset.categoryId = categoryId
-        })
+editButtons.forEach((editButton) => {
+    const categoryId = editButton.dataset.categoryId
+    editButton.addEventListener("click", () => {
+        editCategoryModal.style.display = "block"
+        editCategoryModal.dataset.categoryId = categoryId
     })
+})
 
-    closeEdit.addEventListener("click", () => {
+closeEdit.addEventListener("click", () => {
+    editCategoryModal.style.display = "none"
+})
+
+window.addEventListener("click", (event) => {
+    if (event.target == editCategoryModal) {
         editCategoryModal.style.display = "none"
-    })
-
-    window.addEventListener("click", (event) => {
-        if (event.target == editCategoryModal) {
-            editCategoryModal.style.display = "none"
-        }
-    })
-
-    editNameButton.addEventListener("click", async () => {
-        try {
-            const response = await fetch("http://localhost:3001/categories/name", {
-                method: "PATCH",
-                headers: {
-                    "Authorization": token,
-                    "Content-Type": "application/json"
-                }, 
-                body: JSON.stringify({
-                    newName: editNameInput.value,
-                    categoryId: editCategoryModal.dataset.categoryId
-                })
-            })
-
-            const newNameData = await response.json()
-            console.log(newNameData)
-            alert("Category name was successfully changed!")
-            editNameInput.value = ""
-            getAllCategories()
-            editCategoryModal.style.display = "none"
-        } catch (error) {
-            console.log(error)
-            alert("ERROR! Category name wasn't changed!")
-        }
-        
-    })
-
-    editBudgetButton.addEventListener("click", async () => {
-        try {
-            const response = await fetch("http://localhost:3001/budget/add-budget", {
-                method: "PATCH",
-                headers: {
-                    "Authorization": token,
-                    "Content-Type": "application/json"
-                }, 
-                body: JSON.stringify({
-                    budget: editBudgetInput.value,
-                    categoryId: editCategoryModal.dataset.categoryId
-                })
-            })
-
-            const newBudgetData = await response.json()
-            console.log(newBudgetData)
-            editBudgetInput.value = ""
-            editCategoryModal.style.display = "none"
-            getAllCategories()
-            alert("Month budget was changed!")
-        } catch (error) {
-            console.log(error)
-            alert("ERROR! Month budget wasn't changed!")
-        }
-    })
+    }
+})
+  
 
     const deleteCategoryButton = document.querySelectorAll('.delete-button')
 
@@ -369,4 +275,118 @@ addCategory.addEventListener("click", async () => {
         console.log(error)
         alert("ERROR. Category wasn't added!")
     }
+})
+
+const addBudgetModal = document.getElementById("add-budget-modal")
+
+const addBudgetInput = document.getElementById("add-budget-input")
+
+const addBudget = document.getElementById("add-budget-modal-button")
+
+addBudget.addEventListener("click", async () => {
+    try {
+        const userResponse = await fetch("http://localhost:3001/authorization/user", {
+            method: "GET",
+            headers: {
+                "Authorization": token,
+                "Content-Type": "application/json"
+            }
+        })
+        const userData = await userResponse.json()
+        const userSubscription = userData.user.subscriptionExpiresAt
+        console.log(userSubscription)
+
+        const response = await fetch("http://localhost:3001/budget/add-budget", {
+            method: "PATCH",
+            headers: {
+                "Authorization": token,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                budget: addBudgetInput.value,
+                categoryId: addBudgetModal.dataset.categoryId
+            }),
+        })
+        const budgetData = await response.json()
+        console.log(budgetData)
+        addBudgetInput.value = ""
+        addBudgetModal.style.display = "none"
+        getAllCategories()
+        if (userData.user.subscriptionExpiresAt != null) {
+            alert("Budget was added!")
+        } else {
+            alert("You can't add month budget without subscription!")
+        }
+        
+    } catch (error) {
+        console.log(error) 
+        alert("ERROR! Budget wasn't added!")
+    }
+})
+
+
+const editBudgetButton = document.getElementById("edit-budget-button")
+const editCategoryModal = document.getElementById("edit-category-modal")
+
+editBudgetButton.addEventListener("click", async () => {
+    try {
+        const editBudgetInput = document.getElementById("edit-budget")
+
+        const response = await fetch("http://localhost:3001/budget/add-budget", {
+            method: "PATCH",
+            headers: {
+                "Authorization": token,
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify({
+                budget: editBudgetInput.value,
+                categoryId: editCategoryModal.dataset.categoryId
+            })
+        })
+
+        const newBudgetData = await response.json()
+        console.log(newBudgetData)
+        editBudgetInput.value = ""
+        editCategoryModal.style.display = "none"
+        getAllCategories()
+        alert("Month budget was changed!")
+    } catch (error) {
+        console.log(error)
+        alert("ERROR! Month budget wasn't changed!")
+    }
+})
+    
+
+    const editNameInput = document.getElementById("edit-name")
+
+    const editNameButton = document.getElementById("edit-name-button")
+
+
+
+
+editNameButton.addEventListener("click", async () => {
+    try {
+        const response = await fetch("http://localhost:3001/categories/name", {
+            method: "PATCH",
+            headers: {
+                "Authorization": token,
+                "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify({
+                newName: editNameInput.value,
+                categoryId: editCategoryModal.dataset.categoryId
+            })
+        })
+
+        const newNameData = await response.json()
+        console.log(newNameData)
+        alert("Category name was successfully changed!")
+        editNameInput.value = ""
+        getAllCategories()
+        editCategoryModal.style.display = "none"
+    } catch (error) {
+        console.log(error)
+        alert("ERROR! Category name wasn't changed!")
+    }
+    
 })
