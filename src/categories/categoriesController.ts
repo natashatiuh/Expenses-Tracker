@@ -104,3 +104,13 @@ router.get('/', auth(), async (req, res) => {
         res.json({success: false})
     }
 })
+
+router.get('/names', auth(), async (req, res) => {
+    try {
+        const categoriesNames = await categoriesService.getCategoriesNames((req as MyRequest).userId)
+        res.json({categoriesNames})
+    } catch (error) {
+        console.log(error)
+        res.json({success: false})
+    }
+})

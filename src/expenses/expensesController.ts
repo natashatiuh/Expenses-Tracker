@@ -18,10 +18,10 @@ router.post('/', auth(), validation(addExpenseSchema), async (req, res) => {
         const { expenseName, categoryId, moneyAmount } = req.body as any
         const expenseData = new AddExpenseInput((req as MyRequest).userId, expenseName, categoryId, moneyAmount)
         await expensesService.addExpense(expenseData)
-        res.send("The expense was added!")
+        res.json({success: true})
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -31,13 +31,13 @@ router.patch('/', auth(), validation(editedExpenseSchema), async (req, res) => {
         const expenseData = new EditExpenseInput(expenseId, (req as MyRequest).userId, expenseName, categoryId, moneyAmount, currency)
         const editedExpense = await expensesService.editExpense(expenseData)
         if (!editedExpense) {
-            res.send("Something goes wrong!")
+            res.json({success: false})
         } else {
-            res.send(editedExpense)
+            res.json({editedExpense})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 } )
 
@@ -46,13 +46,13 @@ router.delete('/', auth(), validation(deletedExpenseSchema), async (req, res) =>
         const { expenseId } = req. body as any
         const isExpenseDeleted = await expensesService.deleteExpense(expenseId, (req as MyRequest).userId)
         if (!isExpenseDeleted) {
-            res.send("Something goes wrong!")
+            res.json({success: false})
         } else {
-            res.send("The expense was deleted successfully!")
+            res.send({success: true})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -74,10 +74,10 @@ router.get('/by-category', auth(), validation(getCategoryExpensesSchema), async 
 router.get('/all', auth(), async (req, res) => {
     try {
         const expenses = await expensesService.getExpenses((req as MyRequest).userId)
-        res.send(expenses)
+        res.json({expenses})
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 
@@ -85,13 +85,13 @@ router.get('/expenses-sum', auth(), async (req, res) => {
     try {
         const expensesSum = await expensesService.getExpensesSum((req as MyRequest).userId)
         if (!expensesSum) {
-            res.send("You do not have any expenses!")
+            res.json({success: false})
         } else {
-            res.send(expensesSum)
+            res.send({expensesSum})
         }
     } catch (error) {
         console.log(error)
-        res.send(error)
+        res.json({success: false})
     }
 })
 

@@ -196,3 +196,9 @@ signOutButton.addEventListener("click", () => {
     window.location.replace("file:///Users/nataliatuh/Documents/natasha-projects/expenses_tracker/client/index.html")
 })
 
+const myExpensesButton = document.getElementById("expenses-button")
+
+myExpensesButton.addEventListener("click", () => {
+    window.location.replace("file:///Users/nataliatuh/Documents/natasha-projects/expenses_tracker/client/expenses.html")
+})
+

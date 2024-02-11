@@ -43,10 +43,10 @@ async function getAllCategories() {
                     <p>${userData.user.currency}</p>
                 </td>
                 <td>
-                    <button class="edit-button">Edit</button>
+                    <button data-category-id="${category.id}" class="edit-button">Edit</button>
                 </td>
                 <td>
-                    <button class="delete-button">Delete</button>
+                    <button data-category-id="${category.id}" class="delete-button">Delete</button>
                 </td>
             </tr>
             `)

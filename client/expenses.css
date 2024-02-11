@@ -1,0 +1,245 @@
+.expenses-info h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+}
+
+ table, th, td {
+    border:1px solid black;
+    color: black;
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table tr td {
+    padding: 5px;
+}
+
+.expenses-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#add-expense-button {
+    background-color: rgba(7,64,159,255);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 17px;
+    border-color: rgba(7,64,159,255);
+}
+
+#add-expense-button:hover {
+    background-color: white;
+    border-color: rgba(7,64,159,255);
+    padding: 10px 15px;
+    border-width: 4px;
+    color: black;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 1000%; /* Full height */
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    margin-top: -150px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -37px;
+    color: rgba(7,64,159,255);
+  }
+
+  .close-expense {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-expense:hover,
+  .close-expense:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .add-expense-info {
+    text-align: center;
+  }
+
+  #categories {
+    text-align: center;
+    background-color: white;
+    border-color: rgba(7,64,159,255);
+    border-width: 3px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 8px 44px;
+    margin-bottom: 15px;
+  }
+
+  #categories:hover {
+    cursor: pointer;
+  }
+
+  #expense-name {
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 7px 10px;
+  }
+
+  #price {
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 7px 10px;
+  }
+
+  #add-expense-button-modal {
+    border-radius: 8px;
+    padding: 8px 20px;
+    background-color: rgba(7,64,159,255);
+    color: white;
+  }
+
+  .edit-button {
+    border-color: rgba(7,64,159,255);
+    padding: 4px 18px;
+ }
+
+ .edit-button:hover {
+    padding: 2px 16px;
+    border-width: 4px;
+ }
+
+ .delete-button {
+    border-color: rgba(7,64,159,255);
+    padding: 4px 18px;
+ }
+
+ .delete-button:hover {
+    padding: 2px 16px;
+    border-width: 4px;
+ }
+
+ .edit-expense-name {
+    margin-bottom: 25px;
+ }
+
+ #edit-name-input {
+    border-radius: 8px;
+    text-align: center;
+    padding: 7px 10px;
+ }
+
+#change-name-button {
+    border-radius: 8px;
+    padding: 7px 10px;
+    border-color: rgba(7,64,159,255);
+    border-width: 3px;
+    background-color: white;
+}
+
+#change-name-button:hover {
+    color: white;
+    background-color: rgba(7,64,159,255);
+}
+
+.edit-category {
+    margin-bottom: 20px;
+}
+
+#edit-categories {
+    text-align: center;
+    background-color: white;
+    border-color: rgba(7,64,159,255);
+    border-width: 3px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 8px 32px;
+    margin-bottom: 8px;
+  }
+
+  #edit-categories:hover {
+    cursor: pointer;
+  }
+
+  #edit-category-button {
+    border-radius: 8px;
+    padding: 7px 10px;
+    border-color: rgba(7,64,159,255);
+    border-width: 3px;
+    background-color: white;
+  }
+
+  #edit-category-button:hover {
+    color: white;
+    background-color: rgba(7,64,159,255)
+  }
+
+  #edit-price {
+    border-radius: 8px;
+    text-align: center;
+    padding: 7px 10px;
+  }
+
+  #edit-price-button {
+    border-radius: 8px;
+    padding: 7px 10px;
+    border-color: rgba(7,64,159,255);
+    border-width: 3px;
+    background-color: white;
+  }
+
+  #edit-price-button:hover {
+    color: white;
+    background-color: rgba(7,64,159,255)
+  }
+
+  .table-sum table {
+    justify-content: center;
+    margin-left: 300px;
+  }
+
+  .table-sum h2 {
+    text-align: center;
+    color: white;
+    margin-top: 30px
+  }
+
+  #total-expense {
+    color: white;
+  }
+
+
+
+  

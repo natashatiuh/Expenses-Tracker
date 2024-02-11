@@ -173,6 +173,24 @@ class CategoriesRepository {
             connection.release()
         }
     }
+
+    async getCategoriesName(userId: string) {
+        const connection = await pool.getConnection()
+        try {
+            const query = `
+                SELECT id, name from categories 
+                WHERE userWhoCreated = ?
+            `
+            const params = [userId]
+
+            const [categoriesNames]: any = await connection.query(query, params)
+            return categoriesNames
+
+        } finally {
+            connection.release()
+    } 
+
+    }
 }
 
 export const categoriesRepository = new CategoriesRepository()

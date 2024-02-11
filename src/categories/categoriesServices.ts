@@ -41,6 +41,11 @@ class CategoriesService {
         const userCategories = await categoriesRepository.getUserCategories(userId)
         return userCategories
     }
+
+    async getCategoriesNames(userId: string) {
+        const categoriesNames = await categoriesRepository.getCategoriesName(userId) 
+        return categoriesNames
+    }
 }
 
 export const categoriesService = new CategoriesService()

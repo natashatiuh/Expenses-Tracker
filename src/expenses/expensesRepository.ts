@@ -139,9 +139,10 @@ class ExpensesRepository {
         const connection = await pool.getConnection()   
         try {
             const query = `
-            SELECT SUM(moneyAmount) AS expensesSum
+            SELECT SUM(moneyAmount) AS expensesSum, currency
             FROM expenses
             WHERE userId = ?
+            GROUP BY currency
             `
             const params = [userId]
 
